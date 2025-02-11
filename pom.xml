@@ -553,9 +553,4 @@
         </repository>
     </repositories>
 
-          <repositories>
-            <id>maven-releases</id>
-            <name>maven-releases</name>
-            <url>http://52.207.222.172:8081/repository/maven-releases/</url>
-        </repositories>
 </project>
