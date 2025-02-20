@@ -14,7 +14,7 @@ pipeline {
         
         stage("Git Checkout"){
             steps{
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jaiswaladi246/Petclinic.git'
+                git branch: 'main', changelog: false, poll: false,  url: 'https://github.com/Madansesi/mPetclinic.git'
             }
         }
         
@@ -58,7 +58,6 @@ pipeline {
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'Docker-creds', toolName: 'docker') {
-                        
                         sh "docker build -t image1 ."
                         sh "docker tag image1 madansesii/pet-clinic123:latest "
                         sh "docker push madansesii/pet-clinic123:latest "
