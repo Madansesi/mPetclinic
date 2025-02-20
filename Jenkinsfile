@@ -1,6 +1,7 @@
+def imagename=
 pipeline {
     agent any 
-    
+        
     tools{
         jdk 'jdk11'
         maven 'maven3'
@@ -57,11 +58,11 @@ pipeline {
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: '58be877c-9294-410e-98ee-6a959d73b352', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'Docker-creds', toolName: 'docker') {
                         
                         sh "docker build -t image1 ."
-                        sh "docker tag image1 adijaiswal/pet-clinic123:latest "
-                        sh "docker push adijaiswal/pet-clinic123:latest "
+                        sh "docker tag image1 madansesii/pet-clinic123:latest "
+                        sh "docker push madansesii/pet-clinic123:latest "
                     }
                 }
             }
