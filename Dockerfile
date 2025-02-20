@@ -1,5 +1,6 @@
-FROM openjdk:alpine
-COPY target/petclinic.war petclinic.war
-EXPOSE 8082
-CMD["java", "-jar", "petclinic.war"]
+FROM openjdk:8u151-jdk-alpine3.7
+EXPOSE 8070
+COPY target/petclinic.war $APP_HOME/app.jar
+WORKDIR $APP_HOME
+ENTRYPOINT exec java -jar app.jar
 
