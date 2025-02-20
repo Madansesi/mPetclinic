@@ -1,4 +1,4 @@
-def imagename=
+
 pipeline {
     agent any 
         
